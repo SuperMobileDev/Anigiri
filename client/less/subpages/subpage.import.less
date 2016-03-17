@@ -1,0 +1,23 @@
+.subpage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	color: @altPaneTextColor;
+	padding: 12px 24px;
+
+	.emptyMessage {
+		line-height: 1.5em;
+		color: @altPaneTextColor;
+
+		p {
+			margin-bottom: 1.5em;
+			font-size: 12px;
+		}
+		.accent {
+			color: lighten(@altPaneTextColor,40%);
+			font-size: 12px;
+		}
+	}
+}

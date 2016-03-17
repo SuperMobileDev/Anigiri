@@ -1,0 +1,9 @@
+<template name="userScreen">
+<div id="userScreen" class="screen">
+	{{> sideBar}}
+	<div id="page-container">
+		{{> yield region="page-container"}}
+	</div>
+	{{> infoBar}}
+</div>
+</template>

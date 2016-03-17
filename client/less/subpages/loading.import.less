@@ -1,0 +1,22 @@
+#loadingSubpage {
+	.opacity(0);
+	.transition(0.5s);
+	position: absolute;
+	background-color: @altPaneBgColor;
+	top: @topBarHeight;
+	right: 0px;
+	bottom: 0px;
+	width: @infoBarWidth;
+	overflow: hidden;
+	text-align: center;
+
+	img {
+		.circle(132px);
+		border: solid 12px lighten(@altPaneBgColor,10%);
+		margin: 25% auto;
+	}
+
+	&.visible {
+		.opacity(1);
+	}
+}

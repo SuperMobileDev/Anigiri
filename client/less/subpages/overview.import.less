@@ -1,0 +1,99 @@
+#overviewSubpage {
+	.top {
+		overflow: hidden;
+		margin-bottom: 12px;
+	}
+	.subscribed {
+		color: @subscribedColor;
+		font-size: 24px;
+		position: absolute;
+		right: 24px;
+	}
+	.poster {
+		display: block;
+		float: left;
+		width: 96px;
+		margin-right: 12px;
+		background-color: @loadingImageColor;
+	}
+	.primInfo {
+		float: left;
+		width: 167px;
+	}
+	.field {
+		line-height: 1.5em;
+	}
+	.label {
+		color: darken(@altPaneTextColor,30%);
+		font-size: 10px;
+		text-align: right;
+		display: inline-block;
+		width: 56px;
+		margin-right: 4px;
+	}
+	.value {
+		display: inline-block;
+	}
+	.progress {
+		&.finished { color: @colorFinished; }
+		&.watching { color: @colorWatching; }
+		&.onhold { color: @colorOnHold; }
+		&.backlogged { color: @colorBacklogged; }
+		&.abandoned { color: @colorAbandoned; }
+	}
+	.rating {
+		.star {
+			margin-right: 2px;
+
+			.fa-star-o {
+				color: @unstarColor;
+			}
+			.fa-star {
+				color: @starColor;
+			}
+		}
+	}
+	.userControls {
+		text-align: center;
+		margin-bottom: 8px;
+	}
+	.plot {
+		line-height: 1.25em;
+		margin-bottom: 24px;
+	}
+	.readmore {
+		cursor: pointer;
+		color: @themeColor;
+	}
+	.genres,
+	.themes {
+		margin-bottom: 12px;
+
+		.list {
+			color: @listColor;
+			line-height: 1.25em;
+		}
+	}
+	.accent {
+		color: #fff;
+	}
+	.subscribe-btn {
+		.transition;
+		cursor: pointer;
+		position: absolute;
+		bottom: 0px;
+		width: @infoBarWidth;
+		right: 0px;
+		text-align: center;
+		display: inline-block;
+		height: 32px;
+		line-height: 32px;
+		background-color: @altPaneFooterBgColor;
+		color: @altPaneFooterTextColor;
+
+		&.hover {
+			background-color: #1F861B;
+			color: #fff;
+		}
+	}
+}

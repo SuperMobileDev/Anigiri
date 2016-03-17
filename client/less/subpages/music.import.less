@@ -1,0 +1,71 @@
+#musicSubpage {
+	padding: 12px 0 !important;
+
+	h4 {
+		margin-bottom: 0px !important;
+		padding: 0 24px 12px 24px;
+		border-bottom: solid 2px @musicAccent;
+	}
+	.song-list {
+		margin-bottom: 12px;
+
+		.song {
+			.transition;
+			cursor: pointer;
+			overflow: hidden;
+			padding: 4px 16px;
+			line-height: 1.25em;
+
+
+			.title {
+				.transition;
+			}
+			&:nth-child(2n+1) {
+				background-color: lighten(@altPaneBgColor,3%);
+			}
+			.num {
+				float: left;
+				width: 16px;
+				text-align: right;
+				margin-right: 12px;
+				color: #fff;
+			}
+			.group {
+				float: left;
+			}
+			.title,
+			.artist {
+				width: 190px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+			.artist {
+				color: @altPaneWellTextColor;
+				font-size: 1.0em;
+				line-height: 1.25em;
+			}
+			.episodes {
+				float: right;
+				text-align: right;
+
+				.label {
+					color: @altPaneWellTextColor;
+					margin-top: 4px;
+					font-size: 10px;
+					text-transform: uppercase;
+					line-height: 1.0em;
+				}
+			}
+			&.hover {
+				background-color: lighten(@altPaneBgColor,5%);
+				.title {
+					color: #fff;
+				}
+				&:nth-child(2n+1) {
+					background-color: lighten(@altPaneBgColor,8%);
+				}
+			}
+		}
+	}
+}

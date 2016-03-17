@@ -1,0 +1,118 @@
+#dashboardPage {
+	.welcome-message {
+		.logo {
+			width: 96px;
+			height: 96px;
+			margin-bottom: 24px;
+		}
+		.title {
+			margin-bottom: 12px;
+			font-size: 36px;
+			font-weight: 200;
+			color: darken(@mainTextColor,15%);
+
+			span {
+				color: @themeAlt;
+			}
+		}
+		p {
+			margin-bottom: 36px;
+			font-size: 18px;
+			font-weight: 200;
+			color: lighten(@mainTextColor,10%);
+		}
+	}
+	@expoHeight: 320px;
+	.expo {
+		position: absolute;
+		height: @expoHeight;
+		top: @topBarHeight;
+		left: 0px;
+		right: 0px;
+
+		.box-sizing;
+		padding: 24px 64px;
+
+		background: @wellDark;
+	}
+	#activity-feed {
+		position: absolute;
+		top: @topBarHeight + @expoHeight;
+		left: 0px;
+		bottom: 0px;
+		width: 60%;
+	}
+	#notifications {
+		position: absolute;
+		top: @topBarHeight + @expoHeight;
+		right: 0px;
+		bottom: 0px;
+		width: 40%;
+		background: @wellLight;
+	}
+
+
+
+
+	.section {
+		margin-bottom: 36px;
+
+		h2 {
+		}
+		.content {
+			margin: 0 32px;
+		}
+		.emptyMessage {
+			text-align: left;
+		}
+	}
+
+	.friendRequest {
+		background: #EBECEE;
+		width: 174px;
+		overflow: hidden;
+		padding: 8px 12px 12px 12px;
+
+		.portrait {
+			.circle(48px);
+			margin-top: 4px;
+			margin-right: 8px;
+		}
+		.friendName {
+			line-height: 1.5em;
+			margin-top: 6px;
+			.truncated-text(114px);
+		}
+		.icon-btn {
+			text-align: center;
+			cursor: pointer;
+			display: inline-block;
+			.circle(24px);
+			line-height: 24px;
+			color: #fff;
+
+			&.accept-btn {
+				.transition;
+				background: #3ECF3E;
+				&.hover {
+					background: darken(#3ECF3E,10%);
+				}
+			}
+			&.decline-btn {
+				.transition;
+				background: #E94545;
+				&.hover {
+					background: darken(#E94545,10%);
+				}
+			}
+		}
+	}
+
+
+
+	.gridContainer {
+		overflow-x: auto;
+		overflow-y: hidden;
+		white-space: nowrap;
+	}
+}

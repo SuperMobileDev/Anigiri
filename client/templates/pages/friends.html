@@ -1,0 +1,19 @@
+<template name="friendsPage">
+<div id="friendsPage" class="page">
+	<h1><i class="fa fa-users"></i> Friends</h1>
+	{{#if hasFriends}}
+	<div class="pageContent">
+		<div id="friendsGrid"></div>
+	</div>
+	{{else}}
+	<div class="emptyMessage">
+		<div class="valigner">
+			<p>
+			You don't have any friends on Anigiri yet.<br/>
+			<span class="accent">Start sharing your favourite animes now!</span>
+			</p>
+		</div>
+	</div>
+	{{/if}}
+</div>
+</template>

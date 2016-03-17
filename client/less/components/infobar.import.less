@@ -1,0 +1,97 @@
+#infoBar {
+	.transition(0.5s);
+	z-index: 100;
+	position: fixed;
+	top: 0px;
+	right: -@infoBarWidth;
+	bottom: 0px;
+	width: @infoBarWidth;
+	background-color: @altPaneBgColor;
+
+	.header {
+		.box-sizing;
+		padding: 12px 24px;
+		overflow: hidden;
+		width: @infoBarWidth;
+		height: @topBarHeight;
+		background-color: darken(@altPaneBgColor,5%);
+		color: darken(@altPaneTextColor,30%);
+
+		.title {
+			.truncated-text(256px);
+			color: @altPaneTextColor;
+			font-size: 1.2em;
+			font-weight: 500;
+			line-height: 1.6em;
+		}
+		.type {
+			text-transform: uppercase;
+			font-size: 11px;
+			line-height: 1.4em;
+			font-weight: 700;
+		}
+		.close-btn {
+			.transition;
+			cursor: pointer;
+			font-size: 2.0em;
+			line-height: 40px;
+
+			&.hover {
+				color: darken(@altPaneTextColor,20%);
+			}
+		}
+	}
+	#navbar {
+		text-align: center;
+		.box-sizing;
+		height: 51px;
+		padding: 12px 0px;
+		border-bottom: solid 1px lighten(@altPaneBgColor,10%);
+
+		.navitem {
+			.transition;
+			cursor: pointer;
+			display: inline-block;
+			color: @altPaneTextColor;
+			width: 72px;
+			height: 24px;
+			line-height: 24px;
+			border-bottom: solid 2px @altPaneBgColor;
+			.rounded(4px);
+			
+			&.hover {
+				background-color: lighten(@altPaneBgColor,10%);
+				border-bottom: solid 2px darken(@altPaneBgColor,5%);
+				color: #fff;
+			}
+			&.selected {
+				background-color: @themeAlt;
+				border-bottom: solid 2px darken(@themeAlt,20%);
+				color: #fff;
+			}
+		}
+	}
+	.body {
+		position: absolute;
+		overflow-x: hidden;
+		overflow-y: auto;
+		.box-sizing;
+		top: 115px;
+		right: 0;
+		bottom: 0px;
+		width: @infoBarWidth;
+
+		h4 {
+			color: darken(@altPaneTextColor,30%);
+			text-transform: uppercase;
+			font-size: 11px;
+			font-weight: 600;
+			line-height: 1.0em;
+			margin-bottom: 4px;
+		}
+	}
+
+	&.visible {
+		right: 0;
+	}
+}

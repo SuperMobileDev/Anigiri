@@ -1,0 +1,16 @@
+<template name="gridItem">
+{{#if this}}
+<span class="gridItem {{progress}}" data-annId="{{annId}}">
+	<div class="cover" style="background-image:url('{{poster}}')"></div>
+	<div class="title">{{{title}}}</div>
+	{{#if showEpisodes}}
+	<div class="episodes">{{{subbedEpisodes}}}</div>
+	{{/if}}
+	{{#if showRating}}
+	<div class="rating">{{{rating}}}</div>
+	{{/if}}
+</span>
+{{else}}
+<span class="gridItem"></span>
+{{/if}}
+</template>

@@ -1,0 +1,49 @@
+.searchResultCategory {
+	.transition;
+	.box-sizing;
+	cursor: pointer;
+	float: left;
+	height: 100%;
+
+	width: @searchCategoryWidth;
+	padding: 24px;
+
+	h4 {
+		.transition;
+		font-size: 1.2em;
+		font-weight: 600;
+		border-bottom: solid 1px lighten(@mainTextColor,30%);
+
+		i.fa {
+			.transition;
+			margin-right: 4px;
+			color: lighten(@mainTextColor,20%);
+		}
+		.counter {
+			font-weight: 500;
+			font-size: 0.9em;
+			color: @themeColor;
+			display: inline-block;
+			margin-top: 2px;
+		}
+	}
+	.resultList {
+		width: 264px;
+		position: absolute;
+		top: 52px;
+		bottom: 12px;
+		overflow-y: auto;
+		padding-right: 12px;
+	}
+
+	&.hover {
+		background-color: #f8f8f8;
+
+		h4 {
+			border-bottom-color: @themeColor;
+			i.fa {
+				color: @themeColor;
+			}
+		}
+	}
+}

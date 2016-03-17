@@ -1,0 +1,56 @@
+<template name="activitySubpage">
+<div id="activitySubpage" class="subpage">
+{{#if isSubscribed}}
+{{#with getSubscription}}
+	<div class="section">
+		<h4>Progress</h4>
+		<div class="content">
+			{{{progress}}}
+		</div>
+	</div>
+	{{#if showEpisodes}}
+	<div class="section">
+		<h4>Episodes</h4>
+		<div class="content">
+			{{#if showEpisodeControls}}
+			<div class="episodeControls">
+				<i class="epCountControl epCountUp fa fa-chevron-circle-up"></i>
+				<i class="epCountControl epCountDown fa fa-chevron-circle-down"></i>
+			</div>
+			{{/if}}
+			<div class="episodeCount">
+				{{{episodes}}}				
+			</div>
+		</div>
+	</div>
+	{{/if}}
+	<div class="section">
+		<h4>Rating</h4>
+		<div class="content">
+			{{{rating}}}
+		</div>
+	</div>
+	<div class="section">
+		<h4>Link Generation Rule</h4>
+		<div class="content">
+			<input type="text" class="linkGenerationRule" placeholder="Input link generation rule here." value="{{lgr}}" />
+			<p class="lgrInstr">
+				http://www.animeseason.com/<span>{title|-}</span>-episode-<span>{ep}</span>/<br/>
+			</p>
+		</div>
+	</div>
+	<div class="unsubscribe-btn">Unsubscribe</div>
+{{/with}}
+{{else}}
+	<div class="emptyMessage">
+		<div class="valigner">
+			<p>
+				You are not currently subscribed.<br/>
+				<span class="accent">Would you like to start following this anime?</span>
+			</p>
+			<div class="subscribe-btn anigiri-btn">Subscribe Now</div>
+		</div>
+	</div>
+{{/if}}
+</div>
+</template>

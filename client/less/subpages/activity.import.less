@@ -1,0 +1,139 @@
+#activitySubpage {
+	.section {
+		margin-bottom: 24px;
+
+		h4 {
+			margin-bottom: 8px !important;
+		}
+
+		.content {
+			overflow: hidden;
+
+			.progress {
+				.transition;
+				cursor: pointer;
+				display: inline-block;
+				height: 24px;
+				line-height: 24px;
+				width: 94px;
+				margin-right: 2px;
+				text-align: center;
+				background-color: #212330;
+				border-bottom-style: solid;
+				border-bottom-width: 2px;
+				border-bottom-color: darken(#212330,2%);
+				margin-bottom: 4px;
+				.rounded(4px);
+				
+				&.hover {
+					opacity: 0.7;
+					color: #fff;
+				}
+				&.selected {
+					opacity: 1.0;
+					color: #fff;
+				}
+				&[data-progress=backlogged].hover,
+				&[data-progress=backlogged].selected { background-color: @colorBacklogged; border-bottom-color: darken(@colorBacklogged,20%); }
+				&[data-progress=watching].hover,
+				&[data-progress=watching].selected { background-color: @colorWatching; border-bottom-color: darken(@colorWatching,20%); }
+				&[data-progress=onhold].hover,
+				&[data-progress=onhold].selected { background-color: @colorOnHold; border-bottom-color: darken(@colorOnHold,20%); }
+				&[data-progress=finished].hover,
+				&[data-progress=finished].selected { background-color: @colorFinished; border-bottom-color: darken(@colorFinished,20%); }
+				&[data-progress=abandoned].hover,
+				&[data-progress=abandoned].selected { background-color: @colorAbandoned; border-bottom-color: darken(@colorAbandoned,20%); }
+			}
+			.episodeControls {
+				float: left;
+				margin-right: 12px;
+
+				.epCountControl {
+					.transition;
+					cursor: pointer;
+					font-size: 28px;
+					color: darken(@altPaneTextColor,30%);
+					.user-select;
+
+					&.hover {
+						color: darken(@altPaneTextColor,20%);
+					}
+				}
+			}
+			.episodeCount {
+				float: left;
+				font-size: 32px !important;
+				height: 32px;
+				line-height: 32px;
+				font-size: 12px;
+				color: darken(@altPaneTextColor,20%);
+
+				.currEpisode {
+					font-weight: 200;
+					color: @altPaneTextColor;
+				}
+				.maxEpisodes {
+					font-size: 13px !important;
+				}
+			}
+			.stars {
+				float: left;
+				cursor: pointer;
+				.star {
+					.transition;
+					font-size: 24px;
+					margin-right: 2px;
+
+					&.fa-star-o {
+						color: @unstarColor;
+					}
+					&.fa-star {
+						color: @starColor;
+					}
+				}
+			}
+			.linkGenerationRule {
+				.box-sizing;
+				width: 100%;
+				padding: 4px;
+				border: solid 1px darken(@altPaneTextColor,35%);
+				outline: none;
+				background-color: transparent;
+				color: #fff;
+				font-family: @sansSerifFont;
+				font-weight: 300;
+				font-size: @fontSize;
+				&::-webkit-input-placeholder { color: @placeholderTextColor; }
+				&:-moz-placeholder { color: @placeholderTextColor; }
+				&:-ms-input-placeholder { color: @placeholderTextColor; }
+			}
+			.lgrInstr {
+				line-height: 1.2em;
+				font-family: Courier;
+				font-size: 9px;
+				span {
+					color: @themeColor;
+				}
+			}
+		}
+	}
+	.unsubscribe-btn {
+		.transition;
+		cursor: pointer;
+		position: absolute;
+		bottom: 0px;
+		width: @infoBarWidth;
+		right: 0px;
+		text-align: center;
+		display: inline-block;
+		height: 32px;
+		line-height: 32px;
+		background-color: @altPaneFooterBgColor;
+		color: @altPaneFooterTextColor;
+
+		&.hover {
+			background-color: #E21D3F;
+			color: #fff;
+		}
+	}
+}

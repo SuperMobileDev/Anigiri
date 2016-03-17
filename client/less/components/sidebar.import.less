@@ -1,0 +1,258 @@
+#sideBar {
+	.transition;
+	position: fixed;
+	.box-sizing;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: @sideBarWidth;
+
+	#corner {
+		.transition;
+		position: relative;
+		overflow: hidden;
+		.box-sizing;
+		width: 100%;
+		height: @topBarHeight;
+		background-color: @themeColor;
+		padding: 0px 12px 0px 24px;
+		line-height: 68px;
+
+		h1 {
+			float: left;
+			color: #fff;
+			font-family: @logoFont;
+			font-weight: 400;
+			font-size: 22px;
+		}
+		img {
+			float: left;
+			width: 32px;
+			height: 32px;
+			margin-top: 16px;
+			margin-right: 8px;
+		}
+		i.toggle {
+			.transition;
+			position: absolute;
+			cursor: pointer;
+			font-size: 16px;
+			color: lighten(@themeColor,10%);
+			top: 4px;
+			right: 4px;
+
+			&.hover {
+				color: lighten(@themeColor,20%);
+			}
+		}
+	}
+	#navigation {
+		.transition;
+		position: absolute;
+		top: @topBarHeight;
+		bottom: @bottomBarHeight;
+		left: 0px;
+		width: 100%;
+		overflow-y: auto;
+		background-color: @altPaneBgColor;
+
+		h3 {
+			color: darken(@altPaneTextColor,30%);
+			text-transform: uppercase;
+			font-size: 10px;
+			font-weight: 700;
+			padding: 0px 24px;
+		}
+		.search-btn {
+			@searchBtnHeight: 32px;
+
+			.transition;
+			cursor: pointer;
+			.rounded(4px);
+			border: solid 1px lighten(@altPaneBgColor,10%);
+			background: @altPaneBgColor;
+			margin: 16px 12px 12px 12px;
+			color: @altPaneTextColor;
+			.user-select;
+			overflow: hidden;
+			height: @searchBtnHeight;
+
+			span {
+				float: left;
+				line-height: @searchBtnHeight;
+			}
+			i.fa {
+				.transition;
+				float: left;
+				display: inline-block;
+				font-size: 12px;
+				margin-left: 12px;
+				margin-right: 12px;
+				height: @searchBtnHeight;
+				line-height: @searchBtnHeight;
+			}
+			i.close-btn {
+				.opacity(0);
+				cursor: pointer;
+				color: darken(@altPaneTextColor,30%);
+				float: right;
+				margin-right: 8px;
+				font-size: 16px;
+
+				&.hover {
+					color: darken(@altPaneTextColor,20%);
+				}
+			}
+
+			&.hover, &.selected {
+				background-color: @altPaneWellBgColor;
+				border-color: @altPaneWellBgColor;
+				color: #fff;
+			}
+			&.selected {
+				cursor: default;
+				i.fa:not(.close-btn) {
+					color: @themeColor;
+				}
+				i.close-btn {
+					.opacity(1.0);
+				}
+			}
+		}
+		.option {
+			.transition;
+			cursor: pointer;
+			padding: 6px 24px;
+			color: @altPaneTextColor;
+			.user-select;
+
+			i.fa {
+				display: inline-block;
+				font-size: 14px;
+				line-height: 1.0em;
+				margin-right: 12px;
+			}
+			&.hover {
+				background-color: lighten(@altPaneBgColor,5%);
+				color: #fff;
+			}
+			&.selected {
+				background-color: darken(@altPaneBgColor,5%);
+				color: @themeColor;
+			}
+			.loadingSpinner {
+				.transition;
+				.opacity(0);
+				margin-top: 4px; 
+				width: 8px;
+				height: 8px;
+				border-color: @themeColor;
+				border-right-color: transparent;
+				border-width: 2px;
+
+				.visible {
+					.opacity(1);
+				}
+			}
+		}
+	}
+	#account {
+		.transition;
+		position: absolute;
+		.box-sizing;
+		overflow: hidden;
+		left: 0px;
+		bottom: 0px;
+		width: 100%;
+		height: @bottomBarHeight;
+		background-color: @altPaneWellBgColor;
+
+		.portrait {
+			float: left;
+			line-height: 64px;
+			margin: 13px 12px 0px 24px;
+			.circle(39px);
+			border: solid 3px @altPaneWellTextColor;
+		}
+		.group {
+			float: left;
+			margin-top: 16px;
+
+			.name {
+				.truncated-text(100px);
+				color: #fff;
+			}
+			#signout {
+				.transition;
+				cursor: pointer;
+				color: @altPaneWellTextColor;
+				line-height: 1.0em;
+
+				i.fa {
+					margin-right: 0.4em;
+				}
+				&.hover {
+					color: @themeColor;
+				}
+			}
+		}
+	}
+
+	&.minimized {
+		width: @sideBarWidthMin;
+
+		#corner {
+			text-align: center;
+			padding: 0;
+			img {
+				float: none;
+				margin-right: 0px;
+			}
+			h1 {
+				display: none;
+			}
+		}
+		#navigation {
+			h3 {
+				display: none;
+			}
+			.search-btn {
+				text-align: center;
+				i.fa-search {
+					font-size: 24px;
+					margin: 0;
+					width: 100%;
+				}
+			}
+			.option {
+				padding: 0;
+				text-align: center;
+				.pull-left {
+					width: 100%;
+				}
+				.loadingSpinner {
+					display: none;
+				}
+				i.fa {
+					padding: 12px 0;
+					margin: 0;
+					font-size: 24px;
+				}
+				span {
+					display: none;
+				}
+			}
+		}
+		#account {
+			text-align: center;
+			.portrait {
+				float: none;
+				margin: 0;
+				margin-top: 13px;
+			}
+			.group {
+				display: none;
+			}
+		}
+	}
+}

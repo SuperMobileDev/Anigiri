@@ -1,0 +1,27 @@
+<template name="friendsSubpage">
+<div id="friendsSubpage" class="subpage">
+{{#if hasFriends}}
+	<div id="friendsList">
+	{{#each getFriends}}
+		<div class="friend" data-friendId="{{friendId}}">
+			<img class="portrait" src="{{portrait this}}" />
+			<div class="pull-left">
+				<div class="name">{{name}}</div>
+				<div class="email">{{email}}</div>
+			</div>
+		</div>
+	{{/each}}
+	</div>
+{{else}}
+	<div class="emptyMessage">
+		<div class="valigner">
+			<p>
+				You don't have any friends on Anigiri.<br/>
+				<span class="accent">Would you like to add your friends?</span>
+			</p>
+			<div class="addfriends-btn anigiri-btn">Add Friends Now</div>
+		</div>
+	</div>
+{{/if}}
+</div>
+</template>
